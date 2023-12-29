@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-29T03:50:52" hostname="DESKTOP-QM85DO9" time="0.597">
+<testsuite name="com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-29T07:12:35" hostname="DESKTOP-QM85DO9" time="0.59">
   <properties/>
-  <testcase name="contextLoads()" classname="com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests" time="0.597"/>
-  <system-out><![CDATA[12:50:51.440 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests]: FastCampusProjectBoardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:50:51.522 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.fastcampus.projectboard.FastCampusProjectBoardApplication for test class com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests
+  <testcase name="contextLoads()" classname="com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests" time="0.59"/>
+  <system-out><![CDATA[16:12:34.200 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests]: FastCampusProjectBoardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:12:34.273 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.fastcampus.projectboard.FastCampusProjectBoardApplication for test class com.fastcampus.projectboard.FastCampusProjectBoardApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,10 +13,15 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2023-12-29T12:50:51.805+09:00  INFO 22940 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : Starting FastCampusProjectBoardApplicationTests using Java 17.0.9 with PID 22940 (started by PC in C:\Users\PC\git\fast-board\fastcampus-project-board)
-2023-12-29T12:50:51.807+09:00  INFO 22940 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2023-12-29T12:50:52.898+09:00  INFO 22940 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-12-29T12:50:52.938+09:00  INFO 22940 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : Started FastCampusProjectBoardApplicationTests in 1.298 seconds (process running for 2.136)
+2023-12-29T16:12:34.605+09:00  INFO 27504 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : Starting FastCampusProjectBoardApplicationTests using Java 17.0.9 with PID 27504 (started by PC in C:\Users\PC\git\fast-board\fastcampus-project-board)
+2023-12-29T16:12:34.606+09:00 DEBUG 27504 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : Running with Spring Boot v3.2.1, Spring v6.1.2
+2023-12-29T16:12:34.607+09:00  INFO 27504 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2023-12-29T16:12:35.437+09:00 DEBUG 27504 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2023-12-29T16:12:35.485+09:00 DEBUG 27504 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-12-29T16:12:35.505+09:00 DEBUG 27504 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-12-29T16:12:35.532+09:00 DEBUG 27504 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-12-29T16:12:35.741+09:00  INFO 27504 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2023-12-29T16:12:35.792+09:00  INFO 27504 --- [    Test worker] p.FastCampusProjectBoardApplicationTests : Started FastCampusProjectBoardApplicationTests in 1.396 seconds (process running for 2.209)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
