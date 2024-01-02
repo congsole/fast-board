@@ -1,5 +1,6 @@
 package com.fastcampus.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@Disabled("Spring Data REST 통합테스트는 불필요하므로 제외시킴")
 @DisplayName("DATA REST 테스트 - api 테스트")
 //@WebMvcTest // 슬라이스 테스트. 컨트롤러 외의 내용들은 로드하지 않는다. data rest의 auto configuration을 읽지 않은 것. 그래서 걍 integration test로 바꿔버리기 ↓↓
 @Transactional // 테스트에서 기본적으로 트랜잭션은 슬라이스 테스트들을 전부 롤백. 인테그레이션 테스트라서 디비에 실제로 영향을 주게 되지만 롤백하게 되니까 괜찮아.
