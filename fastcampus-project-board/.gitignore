@@ -5,6 +5,10 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
+# Querydsl
+/src/main/generated
+
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -221,4 +225,36 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,java,gradle,windows,macos,visualstudiocode
- 
+ # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,java,intellij+all,gradle,groovy
+ # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,java,intellij+all,gradle,groovy
+
+ ### Groovy ###
+ # .gitignore created from Groovy contributors in https://github.com/apache/groovy/blob/master/.gitignore
+
+ user.gradle
+ .gradle/
+ target/
+ build/
+
+
+ *.DS_Store
+
+ *.swp
+ *~
+
+ .idea
+ *.iml
+ *.ipr
+
+ .shelf
+
+ .settings/
+
+ bin/
+
+
+
+ !.idea/codeStyles
+ !.idea/runConfigurations
+
+  https://www.toptal.com/developers/gitignore/api/macos,windows,java,intellij+all,gradle,groovy
