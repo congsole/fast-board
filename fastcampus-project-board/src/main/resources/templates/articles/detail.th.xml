@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<thlogic>
+    <attr sel="#header" th:replace="~{header :: header}"></attr>
+    <attr sel="footer" th:replace="~{footer :: footer}"></attr> <!-- footer element를 잡아서 footer.html의 footer를 찾아라??-->
+</thlogic>
