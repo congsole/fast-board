@@ -3,62 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/css/search-bar.css" rel="stylesheet">
+    </head>
 </head>
 
 <body>
 
 <header id="header"></header>
 
-<main>
-   <header>
+<main class="container">
+   <header class="py-5 text-center">
        <h1>첫번째 글</h1>
    </header>
-    <aside>
-        <p>ㅎㅅ</p>
-        <p><a rel="me" href="mailto:qax741@gmail.com">qax741@gmail.com</a></p>
-        <p><time datetime="2024-01-03T00:00:00">2024-10-03</time></p>
-        <p>#java</p>
-    </aside>
 
-    <section>
-        <p>본문<br><br></p>
-        <div>
-            <form>
-                <label for="articleComment" hidden>댓글</label>
-                <textarea id="articleComment" placeholder="댓글 쓰기.." rows="3"></textarea>
-                <button type="submit">쓰기</button>
+    <div class="row g-5">
+        <section class="col-md-5 col-lg-4 order-md-last">
+            <aside>
+                <p>ㅎㅅ</p>
+                <p><a rel="me" href="mailto:qax741@gmail.com">qax741@gmail.com</a></p>
+                <p><time datetime="2024-01-03T00:00:00">2024-10-03</time></p>
+                <p>#java</p>
+            </aside>
+        </section>
+        <article class="col-md-7 col-lg-8">
+            <p>본문입니다 아에이오우 아아아아아아엉 ㅇ어 어ㅓ어어엉 하하하하하하하하 허허허허ㅓ헣허<br><br></p>
+        </article>
+
+    </div>
+
+    <div class="row g-5">
+        <section>
+            <form class="row g-3">
+                <div class="col-8">
+                    <label for="comment-textbox" hidden>댓글</label>
+                    <textarea class="form-control" id="comment-textbox" placeholder="댓글 쓰기.." rows="3"></textarea>
+                </div>
+                <div class="col-auto">
+                    <label for="comment-submit" hidden>댓글 쓰기</label>
+                    <button class="btn btn-primary" id="comment-submit" type="submit">쓰기</button>
+                </div>
             </form>
             <ul>
                 <li>
                     <div>
-                        <time><small>2024-01-03</small></time>
+                        <time><small>2022-01-01</small></time>
                         <strong>ㅎㅅ</strong>
                         <p>
-                            어쩌구 랄랄라 저쩌구
-                            안녕하세요 해솔입니다.
+                            어쩌구 저쩌구 <br>
+                            안녕안녕
                         </p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <time><small>2024-01-03</small></time>
+                        <time><small>2022-01-02</small></time>
                         <strong>ㅎㄱ</strong>
                         <p>
-                            어쩌구 랄랄라 저쩌구
-                            안녕하세요 환국입니다.
+                            간장공장공장장은 <br>
+                            안녕안녕
                         </p>
                     </div>
                 </li>
             </ul>
-        </div>
-        <nav class="" role="navigation">
-            <a class="" href="#"></a>
-            <a class="" href="#"></a>
+
+        </section>
+    </div>
+    <div class="row g-5">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; prev</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">next &raquo;</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
-    </section>
+    </div>
+
 </main>
 
 <footer id="footer"></footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>
