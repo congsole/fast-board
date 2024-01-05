@@ -13,6 +13,8 @@ import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.Optional;
+
 @RepositoryRestResource
 public interface ArticleRepository extends
                                             JpaRepository<Article, Long>,
@@ -22,7 +24,11 @@ public interface ArticleRepository extends
                                             // 부분검색 기능 등 추가
 {
 
-    Page<Article> findByTitle(String title, Pageable pageable);
+    Page<Article> findByTitleContaining(String title, Pageable pageable);
+    Page<Article> findByContentContaining(String content, Pageable pageable);
+    Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
+    Page<Article> findByUserAccount_UserIdContaining(String id, Pageable pageable);
+    Page<Article> findByHashtag(String hashtag, Pageable pageable);
     @Override
     default void customize(QuerydslBindings bindings, QArticle root) {
         bindings.excludeUnlistedProperties(true); // 선택한 필드만 검색할 수 있도록.
@@ -34,4 +40,6 @@ public interface ArticleRepository extends
         bindings.bind(root.createdAt).first(DateTimeExpression::eq); //TODO 시분초까지 정확히 입력해야 검색이 됨. 나중에 수정.
 //        bindings.bind(root.title).first(StringExpression::likeIgnoreCase); // like '${value}'
     }
+
+
 }
