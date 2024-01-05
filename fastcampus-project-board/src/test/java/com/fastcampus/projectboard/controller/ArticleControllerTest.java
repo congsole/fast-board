@@ -70,4 +70,6 @@ class ArticleControllerTest {
                 .andExpect(view().name("articles/search-hashtag"))
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
     }
+
+
 }
