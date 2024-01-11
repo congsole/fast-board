@@ -1,7 +1,6 @@
 package com.fastcampus.projectboard.dto.response;
 
 import com.fastcampus.projectboard.dto.ArticleWithCommentsDto;
-import com.fastcampus.projectboard.response.ArticleCommentsResponse;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -17,10 +16,10 @@ public record ArticleWithCommentsResponse(
         LocalDateTime createdAt,
         String email,
         String nickname,
-        Set<ArticleCommentsResponse> articleCommentsResponses
-) implements Serializable {
+        Set<ArticleCommentResponse> articleCommentsResponses
+) {
 
-    public static com.fastcampus.projectboard.dto.response.ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, Set<ArticleCommentsResponse> articleCommentResponses) {
+    public static com.fastcampus.projectboard.dto.response.ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, Set<ArticleCommentResponse> articleCommentResponses) {
         return new com.fastcampus.projectboard.dto.response.ArticleWithCommentsResponse(id, title, content, hashtag, createdAt, email, nickname, articleCommentResponses);
     }
 
@@ -39,7 +38,7 @@ public record ArticleWithCommentsResponse(
                 dto.userAccountDto().email(),
                 nickname,
                 dto.articleCommentDtos().stream()
-                        .map(ArticleCommentsResponse::from)
+                        .map(ArticleCommentResponse::from)
                         .collect(Collectors.toCollection(LinkedHashSet::new))
         );
     }

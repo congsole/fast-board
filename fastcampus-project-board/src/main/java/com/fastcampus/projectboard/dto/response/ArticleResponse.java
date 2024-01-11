@@ -13,7 +13,7 @@ public record ArticleResponse(
         LocalDateTime createdAt,
         String email,
         String nickname
-) implements Serializable {
+) {
 
     public static ArticleResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname) {
         return new ArticleResponse(id, title, content, hashtag, createdAt, email, nickname);
@@ -24,7 +24,6 @@ public record ArticleResponse(
         if (nickname == null || nickname.isBlank()) {
             nickname = dto.userAccountDto().userId();
         }
-
         return new ArticleResponse(
                 dto.id(),
                 dto.title(),
@@ -35,5 +34,4 @@ public record ArticleResponse(
                 nickname
         );
     }
-
 }
