@@ -2,6 +2,7 @@ package com.fastcampus.projectboard.repository;
 
 import com.fastcampus.projectboard.domain.Article;
 import com.fastcampus.projectboard.domain.QArticle;
+import com.fastcampus.projectboard.repository.querydsl.ArticleRepositoryCustom;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.SimpleExpression;
 import com.querydsl.core.types.dsl.StringExpression;
@@ -22,6 +23,7 @@ public interface ArticleRepository extends
                                             // 모든 필드에 대한 검색 기능 (exact match)
                                             QuerydslBinderCustomizer<QArticle>
                                             // 부분검색 기능 등 추가
+                                            , ArticleRepositoryCustom
 {
 
     Page<Article> findByTitleContaining(String title, Pageable pageable);
