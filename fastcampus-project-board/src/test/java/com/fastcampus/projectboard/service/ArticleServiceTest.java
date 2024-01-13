@@ -4,9 +4,9 @@ import com.fastcampus.projectboard.domain.Article;
 import com.fastcampus.projectboard.domain.UserAccount;
 import com.fastcampus.projectboard.domain.constant.SearchType;
 import com.fastcampus.projectboard.dto.ArticleDto;
-import com.fastcampus.projectboard.dto.ArticleWithCommentsDto;
 import com.fastcampus.projectboard.dto.UserAccountDto;
 import com.fastcampus.projectboard.repository.ArticleRepository;
+import com.fastcampus.projectboard.repository.UserAccountRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,10 +28,9 @@ import static org.mockito.BDDMockito.*;
 @DisplayName("비즈니스 로직 - 게시글")
 @ExtendWith(MockitoExtension.class)
 class ArticleServiceTest {
-    @InjectMocks
-    private ArticleService sut;
-    @Mock
-    private ArticleRepository articleRepository;
+    @InjectMocks private ArticleService sut;
+    @Mock private ArticleRepository articleRepository;
+    @Mock private UserAccountRepository userAccountRepository;
 
     @DisplayName("검색어 없이 게시글을 검색하면, 게시글 페이지를 반환한다.")
     @Test//제목, 본문, id, 닉네임, 해시태그
@@ -147,22 +146,24 @@ class ArticleServiceTest {
 
 
 
-//    @DisplayName("게시글의 수정 정보를 입력하면 게시글을 수정한다.")
-//    @Test
-//    void givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle() {
-//        // given
-//        Article article = createArticle();
-//        ArticleDto dto = createArticleDto("새 타이틀", "새 내용", "#springboot");
-//        given(articleRepository.getReferenceById(dto.id())).willReturn(article);
-//        // when
-//        sut.updateArticle(dto);
-//        // then
-//        assertThat(article)
-//                .hasFieldOrPropertyWithValue("title", article.getTitle())
-//                .hasFieldOrPropertyWithValue("content", article.getContent())
-//                .hasFieldOrPropertyWithValue("hasntag", article.getHashtag());
-//        then(articleRepository).should().getReferenceById(dto.id());
-//    }
+    @DisplayName("게시글의 수정 정보를 입력하면 게시글을 수정한다.")
+    @Test
+    void givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle() {
+        // given
+        Article article = createArticle();
+        ArticleDto dto = createArticleDto("새 타이틀", "새 내용", "#springboot");
+        given(articleRepository.getReferenceById(dto.id())).willReturn(article);
+        given(userAccountRepository.getReferenceById(dto.userAccountDto().userId())).willReturn(dto.userAccountDto().toEntity());        // when
+        // when
+        sut.updateArticle(dto.id(), dto);
+        // then
+        assertThat(article)
+                .hasFieldOrPropertyWithValue("title", article.getTitle())
+                .hasFieldOrPropertyWithValue("content", article.getContent())
+                .hasFieldOrPropertyWithValue("hashtag", article.getHashtag());
+        then(articleRepository).should().getReferenceById(dto.id());
+        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
+    }
 //    @DisplayName("없는 게시글의 수정 정보를 입력하면, 경고 로그를 찍고 아무 것도 하지 않는다.")
 //    @Test
 //    void givenNonexistingArticleInfo_whenUpdatingArticle_thenLogsWarningAndDoesNothing() {
@@ -181,11 +182,12 @@ class ArticleServiceTest {
     void givenArticleId_whenDeletingArticle_thenDeletesArticle() {
         // given
         Long articleId = 1L;
-        willDoNothing().given(articleRepository).delete(any(Article.class));
+        String userId = "solhe";
+        willDoNothing().given(articleRepository).deleteByIdAndUserAccount_UserId(articleId, userId);
         // when
-        sut.deleteArticle(articleId);
+        sut.deleteArticle(articleId, userId);
         // then
-        then(articleRepository).should().deleteById(articleId);
+        then(articleRepository).should().deleteByIdAndUserAccount_UserId(articleId, userId);
     }
 
     private UserAccount createUserAccount() {
