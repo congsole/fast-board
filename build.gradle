@@ -74,8 +74,5 @@ clean.doLast {
 
 // heroku
 bootJar{
-    destinationDirectory = file("build/libs") //gradle build 시 jar 파일이 생성되는 파일명 및 위치를 설정한다.
-    archivesBaseName = 'fastcampus-project-board'   //프로젝트이름
-    archiveFileName = 'project-board-v1.1.jar' //jar파일명
-    archiveVersion = "v1.1"
+    mainClass = 'com.fastcampus.projectboard.FastCampusProjectBoardApplication'
 }
