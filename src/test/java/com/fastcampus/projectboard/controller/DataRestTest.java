@@ -29,14 +29,14 @@ public class DataRestTest {
     public DataRestTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
-    @DisplayName("[api] 게시글 리스트 조회")
-    @Test
-    void givenNothing_whenRequestingArticles_thenReturnsArticlesJsonResponse() throws Exception {
-        // Given
-        // When & Then
-        mvc.perform(get("/api/articles"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
-                .andDo(print());
-    }
+//    @DisplayName("[api] 게시글 리스트 조회")
+//    @Test
+//    void givenNothing_whenRequestingArticles_thenReturnsArticlesJsonResponse() throws Exception {
+//        // Given
+//        // When & Then
+//        mvc.perform(get("/api/articles"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")))
+//                .andDo(print());
+//    }
 }

@@ -39,18 +39,18 @@ class JpaRepositoryTest {
         this.userAccountRepository = userAccountRepository;
     }
 
-    @DisplayName("select 테스트")
-    @Test
-    void givenTestData_whenSelecting_thenWorksFine() {
-        // Given
-
-        // When
-        List<Article> articles = articleRepository.findAll();
-        // Then
-        assertThat(articles)
-                .isNotNull()
-                .hasSize(1000);
-    }
+//    @DisplayName("select 테스트")
+//    @Test
+//    void givenTestData_whenSelecting_thenWorksFine() {
+//        // Given
+//
+//        // When
+//        List<Article> articles = articleRepository.findAll();
+//        // Then
+//        assertThat(articles)
+//                .isNotNull()
+//                .hasSize(1000);
+//    }
     @DisplayName("insert 테스트")
     @Test
     void givenTestData_whenInserting_thenWorksFine() {

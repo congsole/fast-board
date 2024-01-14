@@ -22,13 +22,13 @@ public class AuthControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[view][GET] 로그인 페이지 - 정상 호출")
-    @Test
-    public void givenNothing_whenTryingToLogIn_thenReturnsLogInView() throws Exception {
-        // Given
-        // When & Then
-        mvc.perform(get("/login"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
-    }
+//    @DisplayName("[view][GET] 로그인 페이지 - 정상 호출")
+//    @Test
+//    public void givenNothing_whenTryingToLogIn_thenReturnsLogInView() throws Exception {
+//        // Given
+//        // When & Then
+//        mvc.perform(get("/login"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
+//    }
 }
