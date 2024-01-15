@@ -38,10 +38,10 @@ public interface ArticleRepository extends
     @Override
     default void customize(QuerydslBindings bindings, QArticle root) {
         bindings.excludeUnlistedProperties(true); // 선택한 필드만 검색할 수 있도록.
-        bindings.including(root.title, root.content, root.hashtag, root.createdAt, root.createdBy);
+        bindings.including(root.title, root.content, root.hashtags, root.createdAt, root.createdBy);
         bindings.bind(root.title).first(StringExpression::containsIgnoreCase); // like '%${value}%'
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
-        bindings.bind(root.hashtag).first(StringExpression::containsIgnoreCase);
+        bindings.bind(root.hashtags.any().hashtagName).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdAt).first(DateTimeExpression::eq); //TODO 시분초까지 정확히 입력해야 검색이 됨. 나중에 수정.
 //        bindings.bind(root.title).first(StringExpression::likeIgnoreCase); // like '${value}'
