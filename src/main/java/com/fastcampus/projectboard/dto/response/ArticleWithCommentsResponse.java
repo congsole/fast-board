@@ -40,9 +40,7 @@ public record ArticleWithCommentsResponse(
                 dto.userAccountDto().email(),
                 nickname,
                 dto.userAccountDto().userId(),
-                dto.articleCommentDtos().stream()
-                        .map(ArticleCommentResponse::from)
-                        .collect(Collectors.toCollection(LinkedHashSet::new))
+                organizeChildComments(dto.articleCommentDtos())
         );
     }
 
