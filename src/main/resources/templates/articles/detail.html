@@ -6,23 +6,18 @@
     <meta name="description" content="">
     <meta name="author" content="Uno Kim">
     <title>게시글 페이지</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/css/articles/article-content.css" rel="stylesheet">
 </head>
-
 <body>
-
 <header id="header">
     헤더 삽입부
     <hr>
 </header>
-
 <main id="article-main" class="container">
     <header id="article-header" class="py-5 text-center">
         <h1>첫번째 글</h1>
     </header>
-
     <div class="row g-5">
         <section class="col-md-3 col-lg-4 order-md-last">
             <aside>
@@ -32,12 +27,10 @@
                 <p><span id="hashtag" class="badge text-bg-secondary mx-1"><a class="text-reset">#java</a></span></p>
             </aside>
         </section>
-
         <article id="article-content" class="col-md-9 col-lg-8">
             <pre>본문</pre>
         </article>
     </div>
-
     <div class="row g-5" id="article-buttons">
         <form id="delete-article-form">
             <div class="pb-5 d-grid gap-2 d-md-block">
@@ -67,7 +60,7 @@
                         <input type="hidden" class="article-id">
                         <div class="row">
                             <div class="col-md-10 col-lg-9">
-                                <strong>NickNick</strong>
+                                <strong>Uno</strong>
                                 <small><time>2022-01-01</time></small>
                                 <p class="mb-1">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
@@ -75,43 +68,43 @@
                                 </p>
                             </div>
                             <div class="col-2 mb-3 align-self-center">
-                                <button type="submit" class="btn btn-outline-danger" hidden>삭제</button>
+                                <button type="submit" class="btn btn-outline-danger">삭제</button>
                             </div>
                         </div>
                     </form>
 
-<!--                    <ul class="row me-0">-->
-<!--                        <li class="child-comment">-->
-<!--                            <form class="comment-delete-form">-->
-<!--                                <input type="hidden" class="article-id">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-md-10 col-lg-9">-->
-<!--                                        <strong>Uno</strong>-->
-<!--                                        <small><time>2022-01-01</time></small>-->
-<!--                                        <p class="mb-1">-->
-<!--                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>-->
-<!--                                            Lorem ipsum dolor sit amet-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-2 mb-3 align-self-center">-->
-<!--                                        <button type="submit" class="btn btn-outline-danger">삭제</button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </form>-->
-<!--                        </li>-->
-<!--                    </ul>-->
+                    <ul class="row me-0">
+                        <li class="child-comment">
+                            <form class="comment-delete-form">
+                                <input type="hidden" class="article-id">
+                                <div class="row">
+                                    <div class="col-md-10 col-lg-9">
+                                        <strong>Uno</strong>
+                                        <small><time>2022-01-01</time></small>
+                                        <p class="mb-1">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                                            Lorem ipsum dolor sit amet
+                                        </p>
+                                    </div>
+                                    <div class="col-2 mb-3 align-self-center">
+                                        <button type="submit" class="btn btn-outline-danger">삭제</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
 
-<!--                    <div class="row">-->
-<!--                        <details class="col-md-10 col-lg-9 mb-4">-->
-<!--                            <summary>댓글 달기</summary>-->
-<!--                            <form class="comment-form">-->
-<!--                                <input type="hidden" class="article-id">-->
-<!--                                <input type="hidden" class="parent-comment-id">-->
-<!--                                <textarea class="form-control comment-textbox" placeholder="댓글 쓰기.." rows="2" required></textarea>-->
-<!--                                <button class="form-control btn btn-primary mt-2" type="submit">쓰기</button>-->
-<!--                            </form>-->
-<!--                        </details>-->
-<!--                    </div>-->
+                    <div class="row">
+                        <details class="col-md-10 col-lg-9 mb-4">
+                            <summary>댓글 달기</summary>
+                            <form class="comment-form">
+                                <input type="hidden" class="article-id">
+                                <input type="hidden" class="parent-comment-id">
+                                <textarea class="form-control comment-textbox" placeholder="댓글 쓰기.." rows="2" required></textarea>
+                                <button class="form-control btn btn-primary mt-2" type="submit">쓰기</button>
+                            </form>
+                        </details>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -134,12 +127,10 @@
         </nav>
     </div>
 </main>
-
 <footer id="footer">
     <hr>
     푸터 삽입부
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
