@@ -22,6 +22,8 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.SecurityFilterChain;
 
+import java.util.UUID;
+
 import static io.micrometer.core.ipc.http.HttpSender.Request.build;
 
 @Configuration
@@ -52,7 +54,7 @@ public class SecurityConfig {
                 .logout(logout -> logout.logoutSuccessUrl("/"))
 
                 .oauth2Login(oAuth -> oAuth
-                        .userInfoEndpoint(userInfo -> userInfo.userService(?????)))
+                        .userInfoEndpoint(userInfo -> userInfo.userService(oAuth2UserService)))
 
                 .build();
     }
@@ -78,7 +80,7 @@ public class SecurityConfig {
             String registrationId = userRequest.getClientRegistration().getRegistrationId();
             String providerId = kakaoResponse.id().toString();
             String username = registrationId + "_" + providerId;
-            String dummyPassword = passwordEncoder.encode("{bcrypt}dummy");
+            String dummyPassword = passwordEncoder.encode("{bcrypt}"+ UUID.randomUUID());
 
             return userAccountService.searchUser(username).map(BoardPrincipal::from)
                     .orElseGet(() -> BoardPrincipal.from(userAccountService.saveUser(
