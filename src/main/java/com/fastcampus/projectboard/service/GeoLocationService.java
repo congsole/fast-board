@@ -3,7 +3,9 @@ package com.fastcampus.projectboard.service;
 import com.fastcampus.projectboard.dto.GeoLocationDTO;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CityResponse;
+import com.maxmind.geoip2.record.City;
 import com.maxmind.geoip2.record.Country;
+import com.maxmind.geoip2.record.Location;
 import com.maxmind.geoip2.record.Subdivision;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +28,10 @@ public class GeoLocationService {
             CityResponse cityResponse = databaseReader.city(InetAddress.getByName(ipAddress));
             Country country = cityResponse.getCountry();
             Subdivision subdivision = cityResponse.getMostSpecificSubdivision();
-            return new GeoLocationDTO(ipAddress, country.getName(), subdivision.getName());
+            City city = cityResponse.getCity();
+            Location location = cityResponse.getLocation();
+
+            return new GeoLocationDTO(ipAddress, country.getName(), subdivision.getName(), city.getName(), location.getLatitude(), location.getLongitude(), location.getAccuracyRadius());
         } catch(Exception e) {
             return null;
         }
