@@ -2,6 +2,7 @@ package com.fastcampus.projectboard.service;
 
 import com.fastcampus.projectboard.dto.GeoLocationDTO;
 import com.maxmind.geoip2.DatabaseReader;
+import com.maxmind.geoip2.model.AsnResponse;
 import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.record.City;
 import com.maxmind.geoip2.record.Country;
@@ -26,10 +27,10 @@ public class GeoLocationService {
         }
         try {
             CityResponse cityResponse = databaseReader.city(InetAddress.getByName(ipAddress));
-            Country country = cityResponse.getCountry();
-            Subdivision subdivision = cityResponse.getMostSpecificSubdivision();
-            City city = cityResponse.getCity();
-            Location location = cityResponse.getLocation();
+                Country country = cityResponse.getCountry();
+                Subdivision subdivision = cityResponse.getMostSpecificSubdivision();
+                City city = cityResponse.getCity();
+                Location location = cityResponse.getLocation();
 
             return new GeoLocationDTO(ipAddress, country.getName(), subdivision.getName(), city.getName(), location.getLatitude(), location.getLongitude(), location.getAccuracyRadius());
         } catch(Exception e) {

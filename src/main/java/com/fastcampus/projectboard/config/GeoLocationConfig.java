@@ -12,7 +12,7 @@ import java.io.IOException;
 public class GeoLocationConfig {
     @Bean("databaseReader")
     public DatabaseReader databaseReader() throws IOException, GeoIp2Exception {
-        File resource = new File("./geoip2/GeoLite2-City.mmdb");
+        File resource = new File("./geoip2/GeoLite2-ASN.mmdb");
         return new DatabaseReader.Builder(resource).build();
     }
 }
