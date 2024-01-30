@@ -1,5 +1,6 @@
 package com.fastcampus.projectboard.controller;
 
+import com.fastcampus.projectboard.dto.GeoLocationDTO;
 import com.fastcampus.projectboard.service.GeoLocationService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IpController {
     private final GeoLocationService geoLocationService;
     @GetMapping
-    public ResponseEntity<String> getUserIp(HttpServletRequest request) {
+    public ResponseEntity<GeoLocationDTO> getUserIp(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
         log.info("X-FORWARDED-FOR : " + ip);
 
@@ -45,6 +46,6 @@ public class IpController {
 
 
 
-        return ResponseEntity.ok().body(geoLocationService.getGeoLocation(ip).toString());
+        return ResponseEntity.ok().body(geoLocationService.getGeoLocation(ip));
     }
 }
