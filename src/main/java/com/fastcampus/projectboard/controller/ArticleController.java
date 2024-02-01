@@ -117,10 +117,10 @@ public class ArticleController {
         }
         log.info("Result : IP Address : "+ip);
 
-        /****************/
-        ip = "221.147.174.40";
-        //TODO 삭제필요함, 테스트용이었음.
-        /****************/
+//        /****************/
+//        ip = "221.147.174.40";
+//        //TODO 삭제필요함, 테스트용이었음.
+//        /****************/
 
         String json = geoLocationService.getNaverGeoLocation(ip);
         GeoLocationResponseDto geoLocationResponseDto;
