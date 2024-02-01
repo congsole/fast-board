@@ -44,6 +44,32 @@
     </form>
 </div>
 
+<div id="GeoLocation">
+    <table>
+        <tr>
+            <th>country</th>
+            <th>code</th>
+            <th>r1</th>
+            <th>r2</th>
+            <th>r3</th>
+            <th>lat</th>
+            <th>long</th>
+            <th>net</th>
+        </tr>
+        <tr>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("country")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("code")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("r1")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("r2")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("r3")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("lat")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("long")}'></td>
+            <td th:text='${geoLocationResponseDto.getGeoLocation().get("net")}'></td>
+        </tr>
+    </table>
+
+</div>
+
 <footer id="footer">
     <hr>
     푸터 삽입부
